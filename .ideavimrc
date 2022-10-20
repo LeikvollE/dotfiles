@@ -1,0 +1,22 @@
+""" Load .vimrc,  all common settings should be here
+source ~/.vimrc
+
+""" Plugins
+set NERDTree
+set easymotion
+
+""" IDE specific settings
+set ideajoin
+set idearefactormode=keep
+set ideastatusicon=grey
+
+"" IDE specific mappings
+""  Not actively used (mapped to \)
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+""  Run mappings
+map <leader>d <Action>(Debug)
+""  General mappings
+map <c-z> <action>(ToggleDistractionFreeMode)
+map <leader>r <Action>(RenameElement)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
