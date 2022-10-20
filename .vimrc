@@ -3,19 +3,20 @@ set nocompatible
 """ Map leader to space
 let mapleader = " "
 
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+set backspace=indent,eol,start
+
 """ Plugins
 call plug#begin()
 
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'wincent/terminus'
-Plug 'vimpostor/ale', { 'branch': 'virt_all' }
+Plug 'dense-analysis/ale' 
+
 
 call plug#end()
 
 """ Colorscheme
-let &t_ut=''
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 colorscheme onedark
 
@@ -52,13 +53,15 @@ else
   map <Leader>p :bp<CR>
 endif
 
+let &t_ut=''
+
 map <Leader>x :bd<CR>
 nnoremap <Leader>w :w<CR>
 
 """ Plugins
 let g:ale_sign_error = 'e'
 let g:ale_sign_warning = 'w'
-let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_cursor = 2
 let g:ale_virtualtext_prefix = "    ◆ "
 let g:ale_floating_preview = 1
 let g:ale_floating_window_border = []
