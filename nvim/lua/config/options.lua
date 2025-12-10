@@ -3,4 +3,5 @@
 -- Add any additional options here
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.root_spec = { "lsp", { "lua" }, "cwd" }
-vim.g.autoformat = false
+vim.o.shell = "fish"
+-- vim.g.autoformat = false
